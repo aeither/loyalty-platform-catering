@@ -1,0 +1,367 @@
+export const abiLoyalty = [
+	{
+		type: "constructor",
+		inputs: [
+			{
+				name: "_loyaltyToken",
+				type: "address",
+				internalType: "address",
+			},
+		],
+		stateMutability: "nonpayable",
+	},
+	{
+		type: "function",
+		name: "POINTS_MULTIPLIER",
+		inputs: [],
+		outputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "REFERRAL_BONUS_PERCENTAGE",
+		inputs: [],
+		outputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "TOKEN_CONVERSION_RATE",
+		inputs: [],
+		outputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "calculatePoints",
+		inputs: [{ name: "_amount", type: "uint256", internalType: "uint256" }],
+		outputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+		stateMutability: "pure",
+	},
+	{
+		type: "function",
+		name: "claimRewards",
+		inputs: [],
+		outputs: [],
+		stateMutability: "nonpayable",
+	},
+	{
+		type: "function",
+		name: "customerDiningHistory",
+		inputs: [
+			{ name: "", type: "address", internalType: "address" },
+			{ name: "", type: "uint256", internalType: "uint256" },
+		],
+		outputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "customers",
+		inputs: [{ name: "", type: "address", internalType: "address" }],
+		outputs: [
+			{ name: "wallet", type: "address", internalType: "address" },
+			{ name: "referrer", type: "address", internalType: "address" },
+			{
+				name: "registeredAt",
+				type: "uint256",
+				internalType: "uint256",
+			},
+			{
+				name: "totalHistoricalPoints",
+				type: "uint256",
+				internalType: "uint256",
+			},
+			{
+				name: "currentPoints",
+				type: "uint256",
+				internalType: "uint256",
+			},
+			{ name: "isActive", type: "bool", internalType: "bool" },
+		],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "getCustomerDiningHistory",
+		inputs: [{ name: "_customer", type: "address", internalType: "address" }],
+		outputs: [{ name: "", type: "uint256[]", internalType: "uint256[]" }],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "getRestaurantCustomers",
+		inputs: [
+			{
+				name: "_restaurantId",
+				type: "uint256",
+				internalType: "uint256",
+			},
+		],
+		outputs: [
+			{
+				name: "",
+				type: "tuple[]",
+				internalType: "struct RestaurantLoyalty.DiningActivity[]",
+				components: [
+					{
+						name: "customer",
+						type: "address",
+						internalType: "address",
+					},
+					{
+						name: "restaurantId",
+						type: "uint256",
+						internalType: "uint256",
+					},
+					{ name: "amount", type: "uint256", internalType: "uint256" },
+					{ name: "points", type: "uint256", internalType: "uint256" },
+					{
+						name: "timestamp",
+						type: "uint256",
+						internalType: "uint256",
+					},
+				],
+			},
+		],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "loyaltyToken",
+		inputs: [],
+		outputs: [
+			{
+				name: "",
+				type: "address",
+				internalType: "contract LoyaltyToken",
+			},
+		],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "nextRestaurantId",
+		inputs: [],
+		outputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "owner",
+		inputs: [],
+		outputs: [{ name: "", type: "address", internalType: "address" }],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "recordDining",
+		inputs: [
+			{
+				name: "_restaurantId",
+				type: "uint256",
+				internalType: "uint256",
+			},
+			{ name: "_customer", type: "address", internalType: "address" },
+			{ name: "_amount", type: "uint256", internalType: "uint256" },
+		],
+		outputs: [],
+		stateMutability: "nonpayable",
+	},
+	{
+		type: "function",
+		name: "registerCustomer",
+		inputs: [{ name: "_referrer", type: "address", internalType: "address" }],
+		outputs: [],
+		stateMutability: "nonpayable",
+	},
+	{
+		type: "function",
+		name: "registerRestaurant",
+		inputs: [{ name: "_name", type: "string", internalType: "string" }],
+		outputs: [],
+		stateMutability: "nonpayable",
+	},
+	{
+		type: "function",
+		name: "renounceOwnership",
+		inputs: [],
+		outputs: [],
+		stateMutability: "nonpayable",
+	},
+	{
+		type: "function",
+		name: "restaurantActivities",
+		inputs: [
+			{ name: "", type: "uint256", internalType: "uint256" },
+			{ name: "", type: "uint256", internalType: "uint256" },
+		],
+		outputs: [
+			{ name: "customer", type: "address", internalType: "address" },
+			{
+				name: "restaurantId",
+				type: "uint256",
+				internalType: "uint256",
+			},
+			{ name: "amount", type: "uint256", internalType: "uint256" },
+			{ name: "points", type: "uint256", internalType: "uint256" },
+			{ name: "timestamp", type: "uint256", internalType: "uint256" },
+		],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "restaurants",
+		inputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+		outputs: [
+			{ name: "name", type: "string", internalType: "string" },
+			{ name: "owner", type: "address", internalType: "address" },
+			{ name: "isActive", type: "bool", internalType: "bool" },
+			{ name: "registeredAt", type: "uint256", internalType: "uint256" },
+		],
+		stateMutability: "view",
+	},
+	{
+		type: "function",
+		name: "setLoyaltyToken",
+		inputs: [{ name: "_newToken", type: "address", internalType: "address" }],
+		outputs: [],
+		stateMutability: "nonpayable",
+	},
+	{
+		type: "function",
+		name: "transferOwnership",
+		inputs: [{ name: "newOwner", type: "address", internalType: "address" }],
+		outputs: [],
+		stateMutability: "nonpayable",
+	},
+	{
+		type: "event",
+		name: "CustomerRegistered",
+		inputs: [
+			{
+				name: "customer",
+				type: "address",
+				indexed: true,
+				internalType: "address",
+			},
+			{
+				name: "referrer",
+				type: "address",
+				indexed: false,
+				internalType: "address",
+			},
+		],
+		anonymous: false,
+	},
+	{
+		type: "event",
+		name: "DiningRecorded",
+		inputs: [
+			{
+				name: "customer",
+				type: "address",
+				indexed: true,
+				internalType: "address",
+			},
+			{
+				name: "restaurantId",
+				type: "uint256",
+				indexed: true,
+				internalType: "uint256",
+			},
+			{
+				name: "amount",
+				type: "uint256",
+				indexed: false,
+				internalType: "uint256",
+			},
+			{
+				name: "points",
+				type: "uint256",
+				indexed: false,
+				internalType: "uint256",
+			},
+		],
+		anonymous: false,
+	},
+	{
+		type: "event",
+		name: "OwnershipTransferred",
+		inputs: [
+			{
+				name: "previousOwner",
+				type: "address",
+				indexed: true,
+				internalType: "address",
+			},
+			{
+				name: "newOwner",
+				type: "address",
+				indexed: true,
+				internalType: "address",
+			},
+		],
+		anonymous: false,
+	},
+	{
+		type: "event",
+		name: "RestaurantRegistered",
+		inputs: [
+			{
+				name: "restaurantId",
+				type: "uint256",
+				indexed: true,
+				internalType: "uint256",
+			},
+			{
+				name: "name",
+				type: "string",
+				indexed: false,
+				internalType: "string",
+			},
+			{
+				name: "owner",
+				type: "address",
+				indexed: false,
+				internalType: "address",
+			},
+		],
+		anonymous: false,
+	},
+	{
+		type: "event",
+		name: "RewardsClaimed",
+		inputs: [
+			{
+				name: "customer",
+				type: "address",
+				indexed: true,
+				internalType: "address",
+			},
+			{
+				name: "points",
+				type: "uint256",
+				indexed: false,
+				internalType: "uint256",
+			},
+			{
+				name: "tokens",
+				type: "uint256",
+				indexed: false,
+				internalType: "uint256",
+			},
+		],
+		anonymous: false,
+	},
+	{
+		type: "error",
+		name: "OwnableInvalidOwner",
+		inputs: [{ name: "owner", type: "address", internalType: "address" }],
+	},
+	{
+		type: "error",
+		name: "OwnableUnauthorizedAccount",
+		inputs: [{ name: "account", type: "address", internalType: "address" }],
+	},
+] as const;

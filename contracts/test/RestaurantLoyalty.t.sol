@@ -3,7 +3,6 @@ pragma solidity ^0.8.20;
 
 import "forge-std/Test.sol";
 import "../src/RestaurantLoyalty.sol";
-// import "../src/LoyaltyToken.sol";
 
 contract RestaurantLoyaltyTest is Test {
     RestaurantLoyalty public loyalty;
