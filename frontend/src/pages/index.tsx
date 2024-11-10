@@ -6,7 +6,6 @@ import styles from "../styles/Home.module.css";
 import { abiLoyalty } from "../utils/abiLoyalty";
 import { replaceBigInts } from "../utils/helpers";
 
-
 // const addressToken = "0x96F249f0971Fc08Fe8fbD8956bc1a830C6C76b0e";
 // const addressLoyalty = "0x67f2a17036cC4f351f457aA4c3B248b8584856B0";
 
@@ -218,6 +217,7 @@ const Home: NextPage = () => {
 							Step 5: Claim Rewards (Customer Only)
 						</h2>
 						<button
+							type="button"
 							className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600"
 							onClick={() =>
 								writeContract({
@@ -236,6 +236,7 @@ const Home: NextPage = () => {
 						<h2 className="text-xl font-bold">Step 6: View History</h2>
 						<div className="space-y-2">
 							<button
+								type="button"
 								className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 mr-2"
 								onClick={() =>
 									writeContract({
@@ -250,6 +251,7 @@ const Home: NextPage = () => {
 							</button>
 
 							<button
+								type="button"
 								className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
 								onClick={() =>
 									writeContract({
